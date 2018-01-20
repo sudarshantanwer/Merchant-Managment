@@ -1,0 +1,140 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-appearance 1.6s ease-in;
+  height: 80px;
+  background: white;
+  padding: 15px 0;
+  border-radius: 3px;
+}
+
+.App-header {
+  background-color: #1B4691;
+  height: 100px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-appearance {
+  from {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.table-header {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: grey;
+  width:70%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.table-header li, .table-row li {
+  float: left;
+  padding: 18px 50px;
+  width:5%;
+}
+
+.table-body {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  width:70%;
+  margin: auto;
+  border: 1px solid;
+
+}
+
+.table-row {
+  /*float: left;*/
+  /*padding: 18px 50px;*/
+  /*list-style-type: none;*/
+  display: inline-block;
+  float: left;
+  padding: 0;
+
+}
+
+.table-row li:last-child {
+  width : 10%;
+}
+
+ul {
+  list-style-type: none;
+
+}
+
+.edit-form {
+  border: 1px solid black;
+  width:50%;
+  margin: 10px auto 0 auto;
+}
+
+.form-row {
+  margin: 10px auto 0 auto;
+  padding: 0px 0 10px 0;
+  width:100%;
+}
+
+.form-row span {
+  display: inline-block;
+  width: 20%;
+}
+
+.form-row input {
+  display: inline-block;
+  width:40%;
+  padding:10px;
+}
+
+.radio-block {
+  display: inline-block;
+  width: 40%;
+  padding: 10px;
+}
+
+.radio-block label, .radio-block input {
+  display: inline-block;
+  width: 20%;
+}
+
+.btn-submit {
+  width: 12% !important;
+  background-color: rgba(6, 63, 232, 0.58);
+  color: white;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: rgba(40, 59, 115, 0.58);
+}
+
+.back-btn {
+  float: left;
+  margin-left: 30px;
+}
