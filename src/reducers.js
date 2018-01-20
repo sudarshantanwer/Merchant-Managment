@@ -10,6 +10,9 @@ import {helper} from './utils/processing';
       case MERCHANT_ACTIONS.DELETE_MERCHANT:
           return {...state, list : helper.deleteMerchant(state.list, action.id)}
           break;
+      case MERCHANT_ACTIONS.EDIT_MERCHANT:
+          return {...state, detail : helper.getMerchantDetail(state.list, action.id)}
+          break;
       default :
         return state;
 

@@ -11,7 +11,7 @@ import {getMerchantList, deleteMerchant} from '../actions';
 class Table extends Component {
     constructor(props) {
         super(props);
-        this.state = {source:""}
+        this.state = {selectedId : ''};
     }
 
     componentDidMount(){
@@ -24,7 +24,6 @@ class Table extends Component {
     }
 
     editHandler(){
-
     }
 
     render() {

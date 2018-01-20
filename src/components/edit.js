@@ -3,14 +3,27 @@
  */
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import {getMerchantInfo} from '../actions';
 
 class EditForm extends Component {
+
+    componentDidMount(){
+        getMerchantInfo(this.props.selectedId);
+    }
+
     render() {
+
+        const {detail} = this.props;
+
         return (
-            <div>
+            <div>{
+
+                detail && Object.keys(detail).length > 0 &&
                 <div className="edit-form">
                     <div className="form-row">
-                        <span>First Name</span><input type="text" />
+                        <span>First Name</span><input type="text" value={detail.firstname} />
                     </div>
                     <div className="form-row">
                         <span>Last Name</span><input type="text" />
@@ -34,10 +47,24 @@ class EditForm extends Component {
                         <span></span><input className="btn-submit" type="button" value="Update" />
                     </div>
                 </div>
+                }
             </div>
         );
     }
 }
 
-export default EditForm;
+
+const mapStateToProps = state => {
+    debugger
+    return {
+        detail: state.merchantReducer.detail
+    }
+};
+
+const mapDispatchToProps = dispatch => ({
+    getMerchantInfo: bindActionCreators(getMerchantInfo, dispatch)
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditForm);
 

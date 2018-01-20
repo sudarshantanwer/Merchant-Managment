@@ -17,3 +17,10 @@ export const deleteMerchant = (id)=>{
         id : id     // In real this data will come from api call
     }
 }
+
+export const getMerchantInfo = (id)=>{
+    return {
+        type : MERCHANT_ACTIONS.EDIT_MERCHANT,
+        id : id     // In real this data will come from api call
+    }
+}
