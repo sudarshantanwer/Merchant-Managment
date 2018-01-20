@@ -73,7 +73,6 @@ class Table extends Component {
 
 
 const mapStateToProps = state => {
-    debugger
     return {
      list: state.merchantReducer.list
  }

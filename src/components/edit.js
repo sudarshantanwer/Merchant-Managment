@@ -10,7 +10,8 @@ import {getMerchantInfo} from '../actions';
 class EditForm extends Component {
 
     componentDidMount(){
-        getMerchantInfo(this.props.selectedId);
+        const {getMerchantInfo, selectedId} = this.props;
+        getMerchantInfo(selectedId);
     }
 
     render() {
@@ -26,16 +27,16 @@ class EditForm extends Component {
                         <span>First Name</span><input type="text" value={detail.firstname} />
                     </div>
                     <div className="form-row">
-                        <span>Last Name</span><input type="text" />
+                        <span>Last Name</span><input type="text" value={detail.lastname} />
                     </div>
                     <div className="form-row">
-                        <span>Email</span><input type="text" />
+                        <span>Email</span><input type="text" value={detail.email} />
                     </div>
                     <div className="form-row">
-                    <span>Phone</span><input type="text" />
+                    <span>Phone</span><input type="text" value={detail.phone} />
                     </div>
                     <div className="form-row">
-                    <span>Avtar URL</span><input type="text" />
+                    <span>Avtar URL</span><input type="text" value={detail.avatarUrl} />
                     </div>
                     <div className="form-row">
                         <span>Has Premium</span>
