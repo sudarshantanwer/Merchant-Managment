@@ -1,0 +1,23 @@
+
+import {MERCHANT_ACTIONS} from './constants';
+import {helper} from './utils/processing';
+
+ const merchantReducer = (state = {}, action) =>{
+  switch (action.type){
+      case MERCHANT_ACTIONS.GET_LIST :
+        return {...state, list : action.data}
+        break;
+      case MERCHANT_ACTIONS.DELETE_MERCHANT:
+          return {...state, list : helper.deleteMerchant(state.list, action.id)}
+          break;
+      default :
+        return state;
+
+  }
+
+
+}
+
+export default {
+    merchantReducer : merchantReducer
+}
