@@ -25,3 +25,11 @@ export const getMerchantInfo = (id)=>{
         id : id     // In real this data will come from api call
     }
 }
+
+export const updateDetails = (details)=>{
+    debugger
+    return {
+        type : MERCHANT_ACTIONS.UPDATE_MERCHANT,
+        details : details     // In real this data will come from api call
+    }
+}

@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {getMerchantInfo} from '../actions';
+import {getMerchantInfo, updateDetails} from '../actions';
 
 class EditForm extends Component {
 
@@ -14,9 +14,22 @@ class EditForm extends Component {
         getMerchantInfo(selectedId);
     }
 
+    onUpdate(){
+        this.props.updateDetails(this.props.detail);
+        getMerchantInfo(this.props.selectedId);
+
+    }
+
+    changeHandler(e, prop){
+        debugger
+        this.props.detail[prop] = e.target.value;
+        this.setState();
+    }
+
     render() {
 
         const {detail} = this.props;
+        //this.setState({detail : detail});
 
         return (
             <div>{
@@ -24,7 +37,8 @@ class EditForm extends Component {
                 detail && Object.keys(detail).length > 0 &&
                 <div className="edit-form">
                     <div className="form-row">
-                        <span>First Name</span><input type="text" value={detail.firstname} />
+                        <span>First Name</span><input type="text" value={detail.firstname}
+                                                      onChange={(e)=>{this.changeHandler(e, 'firstname')}} />
                     </div>
                     <div className="form-row">
                         <span>Last Name</span><input type="text" value={detail.lastname} />
@@ -45,7 +59,7 @@ class EditForm extends Component {
                         </div>
                     </div>
                     <div className="form-row">
-                        <span></span><input className="btn-submit" type="button" value="Update" />
+                        <span></span><input className="btn-submit" type="button" value="Update" onClick={()=>{this.onUpdate()}} />
                     </div>
                 </div>
                 }
@@ -63,7 +77,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    getMerchantInfo: bindActionCreators(getMerchantInfo, dispatch)
+    getMerchantInfo: bindActionCreators(getMerchantInfo, dispatch),
+    updateDetails: bindActionCreators(updateDetails, dispatch)
 });
 
 

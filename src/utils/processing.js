@@ -27,7 +27,20 @@ debugger
     return detail;
 }
 
+const updateDetails = (list, detail) => {
+    debugger
+    for(var i=0;i<list.length;i++){
+        if(list[i].id === detail.id){
+            list[i] = detail;
+            break;
+        }
+    }
+
+    return list;
+}
+
 export const helper = {
     deleteMerchant : deleteMerchant,
-    getMerchantDetail : getMerchantDetail
+    getMerchantDetail : getMerchantDetail,
+    updateDetails : updateDetails
 }

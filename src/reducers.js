@@ -15,6 +15,10 @@ import {helper} from './utils/processing';
           debugger;
           return {...state, detail : helper.getMerchantDetail(state.list, action.id)}
           break;
+      case MERCHANT_ACTIONS.UPDATE_MERCHANT:
+          debugger;
+          return {...state, list : helper.updateDetails(state.list, action.details)}
+          break;
       default :
         return state;
 
