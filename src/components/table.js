@@ -2,10 +2,10 @@
  * Created by sudarshan on 17/1/18.
  */
 import React, { Component } from 'react';
-// import { withRouter,Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {getMerchantList, deleteMerchant} from '../actions';
+
 
 
 class Table extends Component {
@@ -57,7 +57,7 @@ class Table extends Component {
                                     <li>
                                         <a href="#" onClick={()=>{this.props.onEdit(obj.id)}}>Edit</a>  |
                                         <a href="#" onClick={()=> { this.deleteMerchant(obj.id) }}>  Delete</a>  |
-                                        <a href="#" onClick={()=> { this.deleteMerchant(obj.id) }}>  Bids</a>
+                                        <a href="#" onClick={()=>{this.props.bidListingHandler(obj.id)}} >  Bids</a>
                                     </li>
                                 </ul>
                             </li>
@@ -83,4 +83,3 @@ const mapDispatchToProps = dispatch => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);
-// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Table));

@@ -7,19 +7,35 @@ import EditForm from './components/edit';
 import AddForm from './components/add';
 import Bids from './components/bids';
 import {Provider} from 'react-redux';
+import StateProvider from './stateProvider'
+import {withRouter} from 'react-router-dom';
+
+
+
+
 
 class App extends Component {
     constructor(props){
         super(props);
-        this.state = {showTable : true, showEditForm : false, showAddForm :false, selectedId : '', title:'Merchant List'};
+        this.state = {showTable : true, showEditForm : false, showAddForm :false, showBids : false, selectedId : '', title:'Merchant List'};
     }
 
     editHandler(id){
-        this.setState({showTable : false, showEditForm : true, showAddForm :false, selectedId : id, title:'Update Merchant'});
+        const { history } = this.props;
+        history.push('/edit/' + id);
+        this.setState({showTable : false, showEditForm : true, showAddForm :false, showBids : false, selectedId : id, title:'Update Merchant'});
+    }
+
+    bidListingHandler(id){
+        const { history } = this.props;
+        history.push('/bids/' + id);
+        this.setState({showTable : false, showEditForm : false, showAddForm :false, showBids : true, selectedId : id, title:'Bids Listing'});
     }
 
     backToList(){
-        this.setState({showTable : true, showEditForm : false, showAddForm :false, selectedId : '', title:'Merchant List'})
+        const { history } = this.props;
+        history.push('');
+        this.setState({showTable : true, showEditForm : false, showAddForm :false, showBids : false, selectedId : '', title:'Merchant List'})
 
     }
 
@@ -30,7 +46,7 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-        <div className="App-header">
+            <div className="App-header">
             {/*<Header/>*/}
           {/*<img src={logo} className="App-logo" alt="logo" />*/}
           {/*<h2>Hii</h2>*/}
@@ -39,7 +55,7 @@ class App extends Component {
 
                 <header>
                     {
-                        (this.state.showEditForm || this.state.showAddForm)  && <a className="back-btn" href="#" onClick={() => { this.backToList() }}> &lt;--- back</a>
+                        (this.state.showEditForm || this.state.showAddForm || this.state.showBids)  && <a className="back-btn" href="#" onClick={() => { this.backToList() }}> &lt;--- back</a>
                     }
                     {
                         <h2 className="title">{this.state.title}</h2>
@@ -49,7 +65,7 @@ class App extends Component {
 
                 <div className="container">
                 {
-                    this.state.showTable && <Table onEdit={this.editHandler.bind(this)}/>
+                    this.state.showTable && <Table bidListingHandler={this.bidListingHandler.bind(this)} onEdit={this.editHandler.bind(this)}/>
                 }
 
                 {
@@ -61,7 +77,11 @@ class App extends Component {
                         this.state.showAddForm && <AddForm backToList={() => { this.backToList() }}/>
 
                     }
-                    <Bids/>
+                    {
+                        this.state.showBids && <Bids selectedId={this.state.selectedId} backToList={() => { this.backToList() }}/>
+
+                    }
+
                 </div>
             </div>
       </div>
@@ -69,4 +89,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

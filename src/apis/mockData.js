@@ -19,7 +19,17 @@ export const Merchants = [ {
     email: 'test@gmail.com',
     phone: '8788999576',
     hasPremium: false,
-    bids: [] //Array<Bid>
+    bids: [{
+        id: 'bid_1233',
+        carTitle: 'XYZ',
+        amount: 2033323,
+        created: '12/09/16'
+    }, {
+        id: 'bid_2455',
+        carTitle: 'ABC',
+        amount: 4522,
+        created: '12/10/16'
+    }] //Array<Bid>
 },{
     id: 'merchant_3',
     firstname: 'Triple',

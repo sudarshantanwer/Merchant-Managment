@@ -15,23 +15,12 @@ import { getBids} from '../actions';
 class Bids extends Component {
     constructor(props) {
         super(props);
-        this.state = {selectedId : ''};
+        // this.state = {selectedId : ''};
     }
 
     componentDidMount(){
         debugger
-        this.props.getBids('merchant_3');
-    }
-
-    deleteMerchant(id) {
-        if(window.confirm('Do you want to delete this merchant ?')){
-            this.props.deleteMerchant(id);
-            this.setState();
-        }
-
-    }
-
-    editHandler(){
+        this.props.getBids(this.props.selectedId);
     }
 
     render() {
@@ -59,6 +48,9 @@ class Bids extends Component {
                                 </ul>
                             </li>
                         )}
+                    {
+                        bids && !bids.length && <span> No Bids for this merchant </span>
+                    }
 
                 </ul>
             </div>

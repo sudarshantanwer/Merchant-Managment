@@ -42,6 +42,7 @@ const updateDetails = (list, detail) => {
 const addMerchant = (list, detail) => {
 
     detail.id = 'merchant_' + new Date().valueOf();
+    detail.bids = [];
 
     return list.push(detail);
 }

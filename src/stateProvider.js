@@ -7,10 +7,8 @@
  */
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
-import Home from '../home/Home';
-import Contact from '../contactUs/Contact';
-import About from '../about/AboutUs';
-import Login from '../login/login';
+import App from './App';
+import Bids from './components/bids';
 
 
 export default class StateProvider extends Component {
@@ -18,10 +16,7 @@ export default class StateProvider extends Component {
     render(){
         return (
             <div>
-                <Route exact path="/" component={Home}></Route>
-                <Route path="/contactUs" component={Contact}></Route>
-                <Route path="/aboutUs" component={About}></Route>
-                <Route path="/login" component={Login}></Route>
+                <Route path="/bids" component={Bids}></Route>
             </div>
         )
     }
