@@ -33,3 +33,11 @@ export const updateDetails = (details)=>{
         details : details     // In real this data will come from api call
     }
 }
+
+export const addMerchant = (details)=>{
+    debugger
+    return {
+        type : MERCHANT_ACTIONS.ADD_MERCHANT,
+        details : details     // In real this data will come from api call
+    }
+}

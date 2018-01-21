@@ -45,7 +45,7 @@ class Table extends Component {
                 <ul className="table-body">
 
                     {
-                        list && list.map((obj,index)=>
+                        list && list.length > 0 && list.map((obj,index)=>
 
                             <li  key={obj.id} >
                                 <ul className="table-row">

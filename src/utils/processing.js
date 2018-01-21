@@ -15,7 +15,7 @@ const deleteMerchant = (list, id) => {
 }
 
 const getMerchantDetail = (list, id) => {
-debugger
+
     var detail = {};
     for(var i=0;i<list.length;i++){
         if(list[i].id === id){
@@ -28,7 +28,7 @@ debugger
 }
 
 const updateDetails = (list, detail) => {
-    debugger
+
     for(var i=0;i<list.length;i++){
         if(list[i].id === detail.id){
             list[i] = detail;
@@ -39,8 +39,16 @@ const updateDetails = (list, detail) => {
     return list;
 }
 
+const addMerchant = (list, detail) => {
+
+    detail.id = 'merchant_' + new Date().valueOf();
+
+    return list.push(detail);
+}
+
 export const helper = {
     deleteMerchant : deleteMerchant,
     getMerchantDetail : getMerchantDetail,
-    updateDetails : updateDetails
+    updateDetails : updateDetails,
+    addMerchant : addMerchant
 }

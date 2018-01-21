@@ -5,9 +5,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {getMerchantInfo, updateDetails} from '../actions';
+import {getMerchantInfo, addMerchant} from '../actions';
 
 class AddForm extends Component {
+
+    constructor(props){
+        super(props);
+        this.detail = {};
+    }
 
     componentDidMount(){
         // const {getMerchantInfo, selectedId} = this.props;
@@ -19,9 +24,9 @@ class AddForm extends Component {
         if(!this.ifSomethingChanged){
             alert('You have not updated anything');
         } else {
-            this.props.updateDetails(this.props.detail);
+            this.props.addMerchant(this.detail);
             //getMerchantInfo(this.props.selectedId);
-            alert('Information Updated Successfully.');
+            alert('Merchant created Successfully.');
             this.props.backToList();
         }
 
@@ -29,10 +34,9 @@ class AddForm extends Component {
     }
 
     changeHandler(e, prop){
-        debugger
-        this.props.detail[prop] = e.target.value;
+        this.detail[prop] = e.target.value;
         this.ifSomethingChanged = true;
-        this.setState();
+        //this.setState();
     }
 
     render() {
@@ -82,15 +86,12 @@ class AddForm extends Component {
 
 
 const mapStateToProps = state => {
-    debugger
-    return {
-        detail: state.merchantReducer.detail
-    }
+    return {}
 };
 
 const mapDispatchToProps = dispatch => ({
     getMerchantInfo: bindActionCreators(getMerchantInfo, dispatch),
-    updateDetails: bindActionCreators(updateDetails, dispatch)
+    addMerchant: bindActionCreators(addMerchant, dispatch)
 });
 
 
