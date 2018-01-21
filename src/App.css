@@ -82,11 +82,17 @@
 }
 
 .table-row li:last-child {
-  width : 10%;
+  width : 17%;
+  text-align: start;
 }
 
+.table-row li:last-child a {
+  text-decoration: none;
+}
+
+
 .table-row:hover{
-  background-color: rgba(91, 123, 216, 0.58);
+  background-color: rgba(217, 221, 232, 0.58);
 }
 
 ul {

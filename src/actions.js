@@ -41,3 +41,11 @@ export const addMerchant = (details)=>{
         details : details     // In real this data will come from api call
     }
 }
+
+export const getBids = (id)=>{
+    debugger
+    return {
+        type : MERCHANT_ACTIONS.GET_BIDS,
+        id : id     // In real this data will come from api call
+    }
+}

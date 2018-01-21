@@ -5,6 +5,7 @@ import Header from './components/header';
 import Table from './components/table';
 import EditForm from './components/edit';
 import AddForm from './components/add';
+import Bids from './components/bids';
 import {Provider} from 'react-redux';
 
 class App extends Component {
@@ -60,6 +61,7 @@ class App extends Component {
                         this.state.showAddForm && <AddForm backToList={() => { this.backToList() }}/>
 
                     }
+                    <Bids/>
                 </div>
             </div>
       </div>

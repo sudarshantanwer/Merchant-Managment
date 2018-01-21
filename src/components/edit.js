@@ -32,7 +32,7 @@ class EditForm extends Component {
         debugger
         this.props.detail[prop] = e.target.value;
         this.ifSomethingChanged = true;
-        this.setState();
+        this.forceUpdate();//setState();
     }
 
     render() {
@@ -68,7 +68,10 @@ class EditForm extends Component {
                     <div className="form-row">
                         <span>Has Premium</span>
                         <div className="radio-block">
-                        <label>Yes </label><input type="radio" /> <label>No </label><input type="radio" />
+                            <label>Yes </label><input value={true} type="radio" onChange={(e)=>{this.changeHandler(e, true)}}
+                                                      checked={detail.hasPremium == true} />
+                            <label>No </label><input value={false} type="radio" onChange={(e)=>{this.changeHandler(e, false)}}
+                                                     checked={detail.hasPremium == false} />
                         </div>
                     </div>
                     <div className="form-row">

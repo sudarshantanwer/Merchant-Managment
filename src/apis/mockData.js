@@ -9,7 +9,7 @@ export const Merchants = [ {
         avatarUrl: 'http://google.com',
         email: 'test@gmail.com',
         phone: '8788999576',
-        hasPremium: 'false',
+        hasPremium: false,
         bids: [] //Array<Bid>
 },{
     id: 'merchant_2',
@@ -18,7 +18,7 @@ export const Merchants = [ {
     avatarUrl: 'http://google.com',
     email: 'test@gmail.com',
     phone: '8788999576',
-    hasPremium: 'false',
+    hasPremium: false,
     bids: [] //Array<Bid>
 },{
     id: 'merchant_3',
@@ -27,6 +27,16 @@ export const Merchants = [ {
     avatarUrl: 'http://google.com',
     email: 'test@gmail.com',
     phone: '8788999576',
-    hasPremium: 'true',
-    bids: [] //Array<Bid>
+    hasPremium: true,
+    bids: [{
+        id: 'bid_1',
+        carTitle: 'ABC',
+        amount: 1000,
+        created: '12/10/16'
+    }, {
+        id: 'bid_2',
+        carTitle: 'ABC',
+        amount: 1000,
+        created: '12/10/16'
+    }] //Array<Bid>
 }];

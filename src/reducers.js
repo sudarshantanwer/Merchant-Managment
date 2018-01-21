@@ -20,6 +20,9 @@ import {helper} from './utils/processing';
       case MERCHANT_ACTIONS.ADD_MERCHANT:
           return {...state, list : helper.addMerchant(state.list, action.details)}
           break;
+      case MERCHANT_ACTIONS.GET_BIDS:
+          return {...state, bids : helper.getBids(state.list, action.id)}
+          break;
       default :
         return state;
 

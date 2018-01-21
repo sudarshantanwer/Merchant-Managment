@@ -53,10 +53,11 @@ class Table extends Component {
                                     <li>{obj.lastname}</li>
                                     <li>{obj.email}</li>
                                     <li>{obj.phone}</li>
-                                    <li>{obj.hasPremium}</li>
+                                    <li>{obj.hasPremium + ''}</li>
                                     <li>
-                                        <a href="#" onClick={()=>{this.props.onEdit(obj.id)}}>Edit</a> |
-                                        <a href="#" onClick={()=> { this.deleteMerchant(obj.id) }}>Delete</a>
+                                        <a href="#" onClick={()=>{this.props.onEdit(obj.id)}}>Edit</a>  |
+                                        <a href="#" onClick={()=> { this.deleteMerchant(obj.id) }}>  Delete</a>  |
+                                        <a href="#" onClick={()=> { this.deleteMerchant(obj.id) }}>  Bids</a>
                                     </li>
                                 </ul>
                             </li>

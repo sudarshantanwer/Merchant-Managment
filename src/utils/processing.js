@@ -46,9 +46,23 @@ const addMerchant = (list, detail) => {
     return list.push(detail);
 }
 
+const getBids = (list, id) => {
+
+    var detail = {};
+    for(var i=0;i<list.length;i++){
+        if(list[i].id === id){
+            detail = list[i];
+            break;
+        }
+    }
+
+    return detail.bids;
+}
+
 export const helper = {
     deleteMerchant : deleteMerchant,
     getMerchantDetail : getMerchantDetail,
     updateDetails : updateDetails,
-    addMerchant : addMerchant
+    addMerchant : addMerchant,
+    getBids : getBids
 }
