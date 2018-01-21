@@ -19,8 +19,11 @@ class EditForm extends Component {
         if(!this.ifSomethingChanged){
             alert('You have not updated anything');
         } else {
+            if(!this.props.detail.firstname || !this.props.detail.email){
+                alert('Please validate the form');
+                return;
+            }
             this.props.updateDetails(this.props.detail);
-            //getMerchantInfo(this.props.selectedId);
             alert('Information Updated Successfully.');
             this.props.backToList();
         }
@@ -29,16 +32,20 @@ class EditForm extends Component {
     }
 
     changeHandler(e, prop){
-        debugger
         this.props.detail[prop] = e.target.value;
         this.ifSomethingChanged = true;
-        this.forceUpdate();//setState();
+        this.forceUpdate();
+    }
+
+    radioChangeHandler(e, prop){
+        this.props.detail[prop] = e.target.value == 'true' ? true : false ;
+        this.ifSomethingChanged = true;
+        this.forceUpdate();
     }
 
     render() {
 
         const {detail} = this.props;
-        //this.setState({detail : detail});
 
         return (
             <div>{
@@ -46,7 +53,7 @@ class EditForm extends Component {
                 detail && Object.keys(detail).length > 0 &&
                 <div className="edit-form">
                     <div className="form-row">
-                        <span>First Name</span><input type="text" value={detail.firstname}
+                        <span>First Name<span className="asterik">*</span></span><input type="text" value={detail.firstname} className={`${!detail.firstname && 'danger' }`}
                                                       onChange={(e)=>{this.changeHandler(e, 'firstname')}} />
                     </div>
                     <div className="form-row">
@@ -54,7 +61,7 @@ class EditForm extends Component {
                                                      onChange={(e)=>{this.changeHandler(e, 'lastname')}}/>
                     </div>
                     <div className="form-row">
-                        <span>Email</span><input type="text" value={detail.email}
+                        <span>Email<span className="asterik">*</span></span><input type="text" value={detail.email} className={`${!detail.email && 'danger' }`}
                                                  onChange={(e)=>{this.changeHandler(e, 'email')}}/>
                     </div>
                     <div className="form-row">
@@ -68,10 +75,10 @@ class EditForm extends Component {
                     <div className="form-row">
                         <span>Has Premium</span>
                         <div className="radio-block">
-                            <label>Yes </label><input value={true} type="radio" onChange={(e)=>{this.changeHandler(e, true)}}
-                                                      checked={detail.hasPremium == true} />
-                            <label>No </label><input value={false} type="radio" onChange={(e)=>{this.changeHandler(e, false)}}
-                                                     checked={detail.hasPremium == false} />
+                            <label>Yes </label><input value={true} type="radio" onChange={(e)=>{this.radioChangeHandler(e, 'hasPremium')}}
+                                                      checked={detail.hasPremium === true} />
+                            <label>No </label><input value={false} type="radio" onChange={(e)=>{this.radioChangeHandler(e, 'hasPremium')}}
+                                                     checked={detail.hasPremium === false} />
                         </div>
                     </div>
                     <div className="form-row">
@@ -86,7 +93,6 @@ class EditForm extends Component {
 
 
 const mapStateToProps = state => {
-    debugger
     return {
         detail: state.merchantReducer.detail
     }

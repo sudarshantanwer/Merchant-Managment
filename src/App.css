@@ -174,3 +174,25 @@ ul {
 .hide{
   visibility: hidden;
 }
+
+.no-bids {
+  padding: 36px;
+  display: inline-block;
+}
+
+.danger {
+  border: 1px solid red;
+}
+
+.asterik {
+  width: 16px !important;
+  color: red;
+}
+
+.paging {
+  display: inline-block;
+  padding: 1px 6px 1px 6px;
+  border: 1px solid black;
+  margin-left: 5px;
+  cursor: pointer;
+}

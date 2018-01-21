@@ -40,7 +40,9 @@ class App extends Component {
     }
 
     addButtonClicked(){
-        this.setState({showTable: false, showEditForm: false, showAddForm :true, title:'Add New Merchant'});
+        const { history } = this.props;
+        history.push('/createMerchant');
+        this.setState({showTable: false, showEditForm: false, showAddForm :true, showBids : false, title:'Add New Merchant'});
     }
 
   render() {

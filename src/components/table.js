@@ -83,3 +83,4 @@ const mapDispatchToProps = dispatch => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);
+// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Table));

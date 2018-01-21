@@ -11,25 +11,21 @@ class AddForm extends Component {
 
     constructor(props){
         super(props);
-        this.detail = {};
-    }
-
-    componentDidMount(){
-        // const {getMerchantInfo, selectedId} = this.props;
-        // getMerchantInfo(selectedId);
-        // this.ifSomethingChanged = false;
+        this.detail = {hasPremium : false};
     }
 
     addMerchant(){
         if(!this.ifSomethingChanged){
             alert('You have not updated anything');
         } else {
+            if(!this.detail.firstname || !this.detail.email){
+                alert('Please validate the form');
+                return;
+            }
             this.props.addMerchant(this.detail);
-            //getMerchantInfo(this.props.selectedId);
             alert('Merchant created Successfully.');
             this.props.backToList();
         }
-
 
     }
 
@@ -37,19 +33,26 @@ class AddForm extends Component {
         this.detail[prop] = e.target.value;
         this.ifSomethingChanged = true;
         //this.setState();
+        this.forceUpdate();//setState();
+
+    }
+
+    radioChangeHandler(e, prop){
+        this.detail[prop] = e.target.value == 'true' ? true : false ;
+        this.ifSomethingChanged = true;
+        this.forceUpdate();
     }
 
     render() {
 
         const {detail} = this.props;
-        //this.setState({detail : detail});
 
         return (
             <div>
 
                 <div className="edit-form">
                     <div className="form-row">
-                        <span>First Name</span><input type="text"
+                        <span>First Name<span className="asterik">*</span></span><input type="text" className={`${!this.detail.firstname && 'danger' }`}
                                                       onChange={(e)=>{this.changeHandler(e, 'firstname')}} />
                     </div>
                     <div className="form-row">
@@ -57,7 +60,7 @@ class AddForm extends Component {
                                                      onChange={(e)=>{this.changeHandler(e, 'lastname')}}/>
                     </div>
                     <div className="form-row">
-                        <span>Email</span><input type="text"
+                        <span>Email<span className="asterik">*</span></span><input type="text" className={`${!this.detail.email && 'danger' }`}
                                                  onChange={(e)=>{this.changeHandler(e, 'email')}}/>
                     </div>
                     <div className="form-row">
@@ -71,7 +74,10 @@ class AddForm extends Component {
                     <div className="form-row">
                         <span>Has Premium</span>
                         <div className="radio-block">
-                        <label>Yes </label><input type="radio" /> <label>No </label><input type="radio" />
+                        <label>Yes </label><input type="radio" value={true} name="premium" checked={this.detail.hasPremium === true}
+                                                  onChange={(e)=>{this.radioChangeHandler(e, 'hasPremium')}} />
+                            <label>No </label><input type="radio" value={false} checked={this.detail.hasPremium === false} name="premium"
+                                                     onChange={(e)=>{this.radioChangeHandler(e, 'hasPremium')}} />
                         </div>
                     </div>
                     <div className="form-row">
