@@ -23,6 +23,9 @@ import {helper} from './utils/processing';
       case MERCHANT_ACTIONS.GET_BIDS:
           return {...state, bids : helper.getBids(state.list, action.id)}
           break;
+      case MERCHANT_ACTIONS.GET_TOTAL_COUNT:
+          return {...state, count : action.count }
+          break;
       default :
         return state;
 

@@ -4,8 +4,17 @@
 
 import {Merchants} from './mockData'
 
-const getMerchantList = () => {
-    return Merchants;
+const getMerchantList = (pageSize, pageIndex) => {
+    var list = [];
+    for(var i=pageIndex;i<pageSize;i++){
+        list.push(Merchants[i]);
+    }
+
+    return list;
+}
+
+const getTotalCount = () => {
+    return Merchants.length;
 }
 
 const deleteMerchant = (id) => {
@@ -15,6 +24,7 @@ const deleteMerchant = (id) => {
 
 export const apis = {
     getMerchantList : getMerchantList,
-    deleteMerchant : deleteMerchant
+    deleteMerchant : deleteMerchant,
+    getTotalCount : getTotalCount
 
 }

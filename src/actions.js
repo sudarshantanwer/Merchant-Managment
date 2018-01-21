@@ -4,10 +4,17 @@
 import {MERCHANT_ACTIONS} from './constants';
 import {apis} from './apis/merchantApi'
 
-export const getMerchantList = (data, type)=>{
+export const getMerchantList = (pageSize, pageIndex)=>{
     return {
         type : MERCHANT_ACTIONS.GET_LIST,
-        data : apis.getMerchantList()     // In real this data will come from api call
+        data : apis.getMerchantList(pageSize, pageIndex)     // In real this data will come from api call
+    }
+}
+
+export const getTotalCount = ()=>{
+    return {
+        type : MERCHANT_ACTIONS.GET_TOTAL_COUNT,
+        count : apis.getTotalCount()     // In real this data will come from api call
     }
 }
 
@@ -19,7 +26,6 @@ export const deleteMerchant = (id)=>{
 }
 
 export const getMerchantInfo = (id)=>{
-    debugger
     return {
         type : MERCHANT_ACTIONS.EDIT_MERCHANT,
         id : id     // In real this data will come from api call
@@ -27,7 +33,6 @@ export const getMerchantInfo = (id)=>{
 }
 
 export const updateDetails = (details)=>{
-    debugger
     return {
         type : MERCHANT_ACTIONS.UPDATE_MERCHANT,
         details : details     // In real this data will come from api call
@@ -35,7 +40,6 @@ export const updateDetails = (details)=>{
 }
 
 export const addMerchant = (details)=>{
-    debugger
     return {
         type : MERCHANT_ACTIONS.ADD_MERCHANT,
         details : details     // In real this data will come from api call
@@ -43,7 +47,6 @@ export const addMerchant = (details)=>{
 }
 
 export const getBids = (id)=>{
-    debugger
     return {
         type : MERCHANT_ACTIONS.GET_BIDS,
         id : id     // In real this data will come from api call

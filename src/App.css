@@ -196,3 +196,19 @@ ul {
   margin-left: 5px;
   cursor: pointer;
 }
+
+.paging:hover{
+  background-color: #9d7db9;
+}
+
+.selectedPage {
+  background-color: #c5c9d6;
+}
+
+footer{
+  margin-top: 15px;
+}
+
+footer span:first-child{
+  float: left;
+}

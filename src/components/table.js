@@ -4,18 +4,46 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {getMerchantList, deleteMerchant} from '../actions';
+import {getMerchantList, deleteMerchant, getTotalCount } from '../actions';
 
 
 
 class Table extends Component {
     constructor(props) {
         super(props);
-        this.state = {selectedId : ''};
+        this.state = {selectedId : '', pageSize : 5, pageIndex : 0};
     }
 
     componentDidMount(){
-        this.props.getMerchantList();
+        this.props.getMerchantList(this.state.pageSize, this.state.pageIndex);
+        this.props.getTotalCount();
+        debugger
+        setTimeout(()=>{
+            if(this.props.count){
+                this.pageInfo();
+            }
+        })
+        // this.forceUpdate();
+
+    }
+
+
+    pageInfo(){
+        this.pages = 0;
+        if(this.props.count % this.state.pageSize){
+           this.pages = parseInt(this.props.count / this.state.pageSize) + 1;
+        } else {
+            this.pages = parseInt(this.props.count / this.state.pageSize);
+        }
+
+        debugger
+        this.pageArray = [];
+        for(var i=0;i<this.pages;i++){
+            this.pageArray.push(i);
+        }
+
+        this.setState({pageArray : this.pageArray});
+
     }
 
     deleteMerchant(id) {
@@ -26,15 +54,22 @@ class Table extends Component {
 
     }
 
-    editHandler(){
+    pageClickHandler(pageIndex){
+        this.setState({pageIndex : pageIndex});
+        this.props.getMerchantList(this.state.pageSize, this.state.pageIndex);
+        setTimeout(()=>{
+            if(this.props.count){
+                this.pageInfo();
+            }
+        })
+
     }
 
     render() {
         const {list} = this.props;
         return (
             <div className="table">
-
-                <ul className="table-header">
+                    <ul className="table-header">
                     <li >First Name</li>
                     <li >Last Name</li>
                     <li >Email</li>
@@ -64,6 +99,14 @@ class Table extends Component {
                         )}
 
                 </ul>
+
+                <footer>
+                    <span>Showing {this.state.pageSize} rows...</span>
+                    {
+                        this.state.pageArray && this.state.pageArray.length > 0 && this.state.pageArray.map((obj,index)=>
+                            <span onClick={()=>{this.pageClickHandler(index)}} className={`paging ${this.state.pageIndex === index && 'selectedPage'}`}  key={index} >{index}</span>
+                        )}
+                </footer>
             </div>
         );
     }
@@ -72,13 +115,16 @@ class Table extends Component {
 
 const mapStateToProps = state => {
     return {
-     list: state.merchantReducer.list
+     list: state.merchantReducer.list,
+     count: state.merchantReducer.count
  }
 };
 
 const mapDispatchToProps = dispatch => ({
     getMerchantList: bindActionCreators(getMerchantList, dispatch),
     deleteMerchant: bindActionCreators(deleteMerchant, dispatch),
+    getTotalCount: bindActionCreators(getTotalCount, dispatch)
+
 });
 
 
