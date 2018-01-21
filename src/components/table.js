@@ -19,8 +19,11 @@ class Table extends Component {
     }
 
     deleteMerchant(id) {
-        this.props.deleteMerchant(id);
-        this.setState();
+        if(window.confirm('Do you want to delete this merchant ?')){
+            this.props.deleteMerchant(id);
+            this.setState();
+        }
+
     }
 
     editHandler(){
@@ -43,6 +46,7 @@ class Table extends Component {
 
                     {
                         list && list.map((obj,index)=>
+
                             <li  key={obj.id} >
                                 <ul className="table-row">
                                     <li>{obj.firstname}</li>
@@ -57,13 +61,6 @@ class Table extends Component {
                                 </ul>
                             </li>
                         )}
-
-
-                    <li>
-                        <ul className="table-row">
-
-                        </ul>
-                    </li>
 
                 </ul>
             </div>

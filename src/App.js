@@ -9,11 +9,16 @@ import {Provider} from 'react-redux';
 class App extends Component {
     constructor(props){
         super(props);
-        this.state = {showTable : true, showForm : false, selectedId : ''};
+        this.state = {showTable : true, showForm : false, selectedId : '', title:'Merchant List'};
     }
 
     editHandler(id){
-        this.setState({showTable : false, showForm : true, selectedId : id});
+        this.setState({showTable : false, showForm : true, selectedId : id, title:'Update Merchant'});
+    }
+
+    backToList(){
+        this.setState({showTable: true, showForm: false})
+
     }
 
   render() {
@@ -25,20 +30,25 @@ class App extends Component {
           {/*<h2>Hii</h2>*/}
         </div>
             <div className="content">
-            {
+                <header>
+                    {
+                        this.state.showForm && <a className="back-btn" href="#" onClick={() => { this.backToList() }}> &lt;---- back</a>
+                    }
+                    {
+                        <h2 className="title">{this.state.title}</h2>
+                    }
+                    <input type="button" value="+ Add Merchant" className="btn-add"/>
+                </header>
+                <div className="container">
+                {
+                    this.state.showTable && <Table onEdit={this.editHandler.bind(this)}/>
+                }
 
-                this.state.showForm &&
-                <a className="back-btn" href="#" onClick={() => {
-                    this.setState({showTable: true, showForm: false})
-                }}> &lt;---- back</a>
-            }
-            {
-               this.state.showTable && <Table onEdit={this.editHandler.bind(this)}/>
-            }
-            {
-                this.state.showForm && <EditForm selectedId={this.state.selectedId}/>
+                {
+                    this.state.showForm && <EditForm selectedId={this.state.selectedId} backToList={() => { this.backToList() }}/>
 
-            }
+                }
+                </div>
             </div>
       </div>
     );
