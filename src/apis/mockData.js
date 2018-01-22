@@ -5,19 +5,19 @@
 export const Merchants = [ {
         id: 'merchant_1',
         firstname: 'John',
-        lastname: 'Cena',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
+        lastname: 'Snow',
+        avatarUrl: 'http://john.png',
+        email: 'john@gmail.com',
+        phone: '99784224224',
         hasPremium: false,
         bids: [] //Array<Bid>
 },{
     id: 'merchant_2',
     firstname: 'Brock',
-    lastname: 'Lsner',
-    avatarUrl: 'http://google.com',
-    email: 'test@gmail.com',
-    phone: '8788999576',
+    lastname: 'Cruise',
+    avatarUrl: 'http://brook/profile.png',
+    email: 'brook@gmail.com',
+    phone: '22424242424',
     hasPremium: false,
     bids: [{
         id: 'bid_1233',
@@ -32,11 +32,11 @@ export const Merchants = [ {
     }] //Array<Bid>
 },{
     id: 'merchant_3',
-    firstname: 'Triple',
-    lastname: 'H',
-    avatarUrl: 'http://google.com',
-    email: 'test@gmail.com',
-    phone: '8788999576',
+    firstname: 'Jack',
+    lastname: 'Amper',
+    avatarUrl: 'http://jack.jpg',
+    email: 'jack@gmail.com',
+    phone: '76473442344',
     hasPremium: true,
     bids: [{
         id: 'bid_1',
@@ -52,11 +52,11 @@ export const Merchants = [ {
 },
     {
         id: 'merchant_33',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
+        firstname: 'Alfet',
+        lastname: 'Max',
+        avatarUrl: 'http://alfet.png',
+        email: 'alfet@gmail.com',
+        phone: '22223234832',
         hasPremium: true,
         bids: [{
             id: 'bid_1',
@@ -72,375 +72,15 @@ export const Merchants = [ {
     },
     {
         id: 'merchant_4',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
+        firstname: 'Rock',
+        lastname: 'Blesar',
+        avatarUrl: 'http://rock.png',
+        email: 'rock@gmail.com',
+        phone: '87434435443',
         hasPremium: true,
         bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_5',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_6',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_7',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_8',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_9',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_10',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_11',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_12',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_13',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_14',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_15',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_16',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_17',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_18',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_19',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_20',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_21',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }, {
-            id: 'bid_2',
-            carTitle: 'ABC',
-            amount: 1000,
-            created: '12/10/16'
-        }] //Array<Bid>
-    },
-    {
-        id: 'merchant_22',
-        firstname: 'Triple',
-        lastname: 'H',
-        avatarUrl: 'http://google.com',
-        email: 'test@gmail.com',
-        phone: '8788999576',
-        hasPremium: true,
-        bids: [{
-            id: 'bid_1',
-            carTitle: 'ABC',
+            id: 'bid_123',
+            carTitle: 'Car title here',
             amount: 1000,
             created: '12/10/16'
         }, {

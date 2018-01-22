@@ -99,14 +99,18 @@ class Table extends Component {
                         )}
 
                 </ul>
-
-                <footer>
-                    <span>Showing {this.state.pageSize} rows...</span>
-                    {
-                        this.state.pageArray && this.state.pageArray.length > 0 && this.state.pageArray.map((obj,index)=>
-                            <span onClick={()=>{this.pageClickHandler(index)}} className={`paging ${this.state.pageIndex === index && 'selectedPage'}`}  key={index} >{index}</span>
-                        )}
-                </footer>
+                {
+                 false && <footer>
+                        <span>Showing {this.state.pageSize} rows...</span>
+                        {
+                            this.state.pageArray && this.state.pageArray.length > 0 && this.state.pageArray.map((obj, index) =>
+                                <span onClick={() => {
+                                    this.pageClickHandler(index)
+                                }} className={`paging ${this.state.pageIndex === index && 'selectedPage'}`}
+                                      key={index}>{index}</span>
+                            )}
+                    </footer>
+                }
             </div>
         );
     }

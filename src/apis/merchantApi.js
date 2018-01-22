@@ -5,12 +5,13 @@
 import {Merchants} from './mockData'
 
 const getMerchantList = (pageSize, pageIndex) => {
-    var list = [];
-    for(var i=pageIndex;i<pageSize;i++){
-        list.push(Merchants[i]);
-    }
-
-    return list;
+    // var list = [];
+    // for(var i=(pageSize*pageIndex);i<((pageSize*pageIndex) + pageSize);i++){
+    //     list.push(Merchants[i]);
+    // }
+    //
+    // return list;
+    return Merchants;
 }
 
 const getTotalCount = () => {
