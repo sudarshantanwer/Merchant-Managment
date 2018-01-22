@@ -7,7 +7,6 @@ import { bindActionCreators } from 'redux';
 import {getMerchantList, deleteMerchant, getTotalCount } from '../actions';
 
 
-
 class Table extends Component {
     constructor(props) {
         super(props);
@@ -17,13 +16,12 @@ class Table extends Component {
     componentDidMount(){
         this.props.getMerchantList(this.state.pageSize, this.state.pageIndex);
         this.props.getTotalCount();
-        debugger
+
         setTimeout(()=>{
             if(this.props.count){
                 this.pageInfo();
             }
         })
-        // this.forceUpdate();
 
     }
 
@@ -36,7 +34,6 @@ class Table extends Component {
             this.pages = parseInt(this.props.count / this.state.pageSize);
         }
 
-        debugger
         this.pageArray = [];
         for(var i=0;i<this.pages;i++){
             this.pageArray.push(i);
@@ -133,4 +130,3 @@ const mapDispatchToProps = dispatch => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);
-// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Table));
