@@ -49,7 +49,7 @@ class Bids extends Component {
                             </li>
                         )}
                     {
-                        bids && !bids.length && <span className="no-bids"> No Bids for this merchant </span>
+                        bids && !bids.length && <span className="no-bids">No Bids for this merchant. </span>
                     }
 
                 </ul>
